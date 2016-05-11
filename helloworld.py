@@ -13,5 +13,6 @@ if __name__ == '__main__':
     config.add_route('hello', '/hello/{name}')
     config.add_view(hello_world, route_name='hello')
     app = config.make_wsgi_app()
-    server = make_server('0.0.0.0', 8080, app)
+    port = int(os.environ['PORT'])
+    server = make_server('ottpau-hello.herokuapp.com', port, app)
     server.serve_forever()
