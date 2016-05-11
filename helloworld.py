@@ -3,6 +3,8 @@
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.response import Response
+from datetime import datetime
+import os
 
 
 def hello_world(request):
@@ -15,4 +17,5 @@ if __name__ == '__main__':
     app = config.make_wsgi_app()
     port = int(os.environ['PORT'])
     server = make_server('ottpau-hello.herokuapp.com', port, app)
+    print('{} Starting server on port {}'.format(datetime.now(), port))
     server.serve_forever()
