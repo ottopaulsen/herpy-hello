@@ -1,1 +1,1 @@
-web: python helloworld.py
+web: ./run.sh
