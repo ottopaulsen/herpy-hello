@@ -18,6 +18,6 @@ if __name__ == '__main__':
     config.add_view(hello_world, route_name='hello')
     port = int(os.environ.get('PORT', 5000))
     app = config.make_wsgi_app()
-    verbose('{} Starting server on port {}'.format(datetime.now(), port))
     server = make_server('0.0.0.0', port, app)
+    verbose('{} Starting server on port {}'.format(datetime.now(), port))
     server.serve_forever()
